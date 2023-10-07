@@ -14,14 +14,14 @@ class Main extends Component {
   };
 
   componentDidMount() {
-    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=terminators`)
+    fetch(`https://www.omdbapi.com/?apikey=68641766&s=terminators`)
       .then((respons) => respons.json())
       .then((data) => this.setState({ movies: data.Search, loading: false }));
   }
 
   handleChangeSearch = (str, type = 'all') => {
     fetch(
-      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${
+      `https://www.omdbapi.com/?apikey=68641766&s=${str}${
         type !== 'all' ? `&type=${type}` : ''
       }`
     )

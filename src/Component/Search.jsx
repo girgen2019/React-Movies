@@ -1,57 +1,53 @@
 /** @format */
 
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button } from './Button';
 import { Filter } from './Filter';
 
-class Search extends Component {
-  state = {
-    search: '',
-    type: 'all',
-  };
+const Search = (props) => {
+  const { handleChangeSearch } = props;
 
-  handleKey = (event) => {
+  const [search, setSearch] = useState('');
+  const [type, setType] = useState('all');
+
+  const handleKey = (event) => {
     if (event.key === 'Enter') {
-      this.props.handleChangeSearch(this.state.search, this.state.type);
+      handleChangeSearch(search, type);
     }
   };
 
-  handleChangeFilter = (event) => {
-    this.setState(
-      () => ({type: event.target.dataset.type}),
-      () => {
-        this.props.handleChangeSearch(this.state.search, this.state.type)
-      }
-      );
+  const handleChangeFilter = (event) => {
+    setType(event.target.dataset.type);
+    handleChangeSearch(search, event.target.dataset.type);
   };
 
-  render() {
-    return (
-      <>
-        <div className="input-field col s12">
-          <input
-            placeholder="search movies"
-            id="search"
-            type="search"
-            className="validate"
-            value={this.state.search}
-            onChange={(e) => this.setState({ search: e.target.value })}
-            onKeyDown={this.handleKey}
-          />
-          {/* <button className='btn search-btn' onClick={() => this.props.handleChangeSearch(this.state.search)}>Search</button> */}
-          <Button
-            handleChangeSearch={this.props.handleChangeSearch}
-            state={this.state}
-          />
-          <Filter
-            state={this.state}
-            handleChangeFilter={this.handleChangeFilter}
-            handleChangeSearch={this.props.handleChangeSearch}
-          />
-        </div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <div className="input-field col s12">
+        <input
+          placeholder="search movies"
+          id="search"
+          type="search"
+          className="validate"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKey}
+        />
+        {/* <button className='btn search-btn' onClick={() => this.props.handleChangeSearch(this.state.search)}>Search</button> */}
+        <Button
+          handleChangeSearch={handleChangeSearch}
+          paramSearch={search}
+          paramType={type}
+        />
+        <Filter
+          paramSearch={search}
+          paramType={type}
+          handleChangeFilter={handleChangeFilter}
+          handleChangeSearch={handleChangeSearch}
+        />
+      </div>
+    </>
+  );
+};
 
 export { Search };

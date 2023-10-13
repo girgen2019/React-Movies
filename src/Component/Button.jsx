@@ -6,7 +6,7 @@ function Button(props) {
       <button
         className="waves-effect waves-light btn search-btn"
         onClick={() =>
-          props.handleChangeSearch(props.state.search, props.state.type)
+          props.handleChangeSearch(props.paramSearch, props.paramType)
         }
       >
         Search

@@ -12,7 +12,7 @@ function Filter(props) {
             type="radio"
             data-type="all"
             onChange={props.handleChangeFilter}
-            checked={props.state.type === "all"}
+            checked={props.paramType === "all"}
           />
           <span>All </span>
         </label>
@@ -25,7 +25,7 @@ function Filter(props) {
             type="radio"
             data-type="movie"
             onChange={props.handleChangeFilter}
-            checked={props.state.type === "movie"}
+            checked={props.paramType === "movie"}
           />
           <span>Movies only</span>
         </label>
@@ -38,7 +38,7 @@ function Filter(props) {
             type="radio"
             data-type="series"
             onChange={props.handleChangeFilter}
-            checked={props.state.type === "series"}
+            checked={props.paramType === "series"}
           />
           <span>Series only</span>
         </label>

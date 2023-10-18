@@ -1,11 +1,10 @@
 /** @format */
-import React, { Component } from 'react';
 import './App.css';
 import { Header } from './Layout/Header';
 import { Footer } from './Layout/Footer';
 import { Main } from './Layout/Main';
 
-const App = () => {
+export const App = () => {
   return (
     <>
       <Header />
@@ -15,4 +14,3 @@ const App = () => {
   );
 };
 
-export default App;

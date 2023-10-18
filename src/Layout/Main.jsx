@@ -7,7 +7,7 @@ import { Search } from '../Component/Search';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const Main = () => {
+export const Main = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -48,4 +48,3 @@ const Main = () => {
   );
 };
 
-export { Main };

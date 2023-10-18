@@ -1,7 +1,7 @@
 /** @format */
 import imageGitHub from '../Component/img/GithubNegative.svg'
 
-function Footer() {
+export const Footer = () => {
   return (
     <footer className="page-footer green darken-4">
       <div className="footer-copyright">
@@ -22,4 +22,4 @@ function Footer() {
   );
 }
 
-export { Footer };
+

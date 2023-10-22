@@ -6,10 +6,10 @@ export const Header = () => {
   return (
     <nav className="green darken-2">
       <div className="nav-wrapper">
-        <a href="#" className="brand-logo">
+        <a href="#" className="logo">
           React movies
         </a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down padding:0">
+        <ul >
           <li>
             <a
               href="https://github.com/girgen2019"
@@ -19,7 +19,7 @@ export const Header = () => {
                 width: '48px',
               }}
             >
-              <img src={imageGitHub} />
+              <img src={imageGitHub} className='github'/>
             </a>
           </li>
         </ul>

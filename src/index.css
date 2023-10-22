@@ -18,33 +18,61 @@ nav {
   padding: 0 1.5rem;
 }
 
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 nav ul a {
   padding: 0;
   border-radius: 50%;
-  opacity: 0.9s
+  opacity: 0.9s;
 }
 nav ul a:hover {
-  opacity: 1
+  opacity: 1;
 }
 
 .content {
   min-height: calc(100vh - 70px - 64px);
+  padding: 0 1.5rem;
 }
 
-.movies{
-  display:grid;
+.movies {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap:0.5rem
+  gap: 0.5rem;
 }
 
-.search-btn{
+.search-btn {
   position: absolute;
   top: 0;
   right: 0.5rem;
 }
 
-.radio-filter{
+.radio-filter {
   display: grid;
   grid-template-columns: 0.33fr 0.33fr 0.33fr;
   justify-items: center;
+}
+
+@media (max-width: 600px) {
+  nav {
+    height: 64px;
+  }
+  .nav-wrapper {
+    font-size: 1.5rem;
+    height: 64px;
+  }
+}
+@media (max-width: 450px) {
+  nav {
+    height: 64px;
+  }
+  .github {
+    height: 80%;
+  }
+  .nav-wrapper {
+    font-size: 1.5rem;
+    height: 64px;
+  }
 }

@@ -16,6 +16,7 @@ code {
 
 nav {
   padding: 0 1.5rem;
+  font-size: 1.5rem;
 }
 
 .nav-wrapper {
@@ -74,5 +75,11 @@ nav ul a:hover {
   .nav-wrapper {
     font-size: 1.5rem;
     height: 64px;
+  }
+  .search-btn {
+    right: -1.5rem;
+  }
+  #search{
+    font-size: 0.8rem;
   }
 }
